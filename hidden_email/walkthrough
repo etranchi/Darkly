@@ -1,3 +1,5 @@
 We can find on the recover password page, in the source an hidden input with a mail value.
 
 If we put a null email value and send, the flag appear.
+
+Really not good to put visible email on this input.. just handle it in back, spam is easy.
