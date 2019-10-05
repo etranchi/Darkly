@@ -1,0 +1,9 @@
+In the robot file we can see to directory. In the whatever directory we can find a htpasswd file with:
+
+root:8621ffdbc5698829397d97767ac13db3
+
+if we put the value on google, we can find MD5 reverse value, the most appropriate is "dragon".
+
+So now we have a login and a password. We can try to login, but that doesn't match on the login page, so we need to find an other place to loggin.
+
+After some tries, we have find a login page at path admin. We can log with root and get the flag.
