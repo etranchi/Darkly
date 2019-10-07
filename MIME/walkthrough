@@ -1,0 +1,11 @@
+On the upload section, we can upload anithing if we intercep the request and modify the header to lie on the content of the file.
+
+We need a fake image file with some code inside, but with the right extension so file.php.jpg.
+
+We need Tamper Data on google chrome, and set the modify Request then we need to say that the content is an image, so image/jpg.
+
+Then we see :
+
+	"/tmp/mime.php.jpg succesfully uploaded."
+
+

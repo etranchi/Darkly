@@ -1,0 +1,7 @@
+when trying to put a feedback, we can see that the input is limited to a len of 10. If we change this len, we can see a lot of feedback with a len more than 10.
+
+We can see a lot of path to some file, one is really interesting : ../../../../../../../../../../../../../../../../etc/passwd
+
+If we ask for a page with this path, an alert occur with the flag.
+
+How to protect that, back need to protect this path and response with an error.
