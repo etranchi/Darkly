@@ -1,4 +1,4 @@
-In the robot file we can see to directory. In the whatever directory we can find a htpasswd file with:
+In the robot file we can see two directory. In the whatever directory we can find a htpasswd file with:
 
 root:8621ffdbc5698829397d97767ac13db3
 

