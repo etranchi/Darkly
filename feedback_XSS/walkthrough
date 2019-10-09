@@ -1,0 +1,9 @@
+XSS Attack
+
+First way is to execute scripts inside the input, the msgArea is not checked.
+
+Second way (a bit weird), is to put a single charac (a, c, e, etc..) and send.
+
+The flag appear.
+
+To protect this few ways, 2 sides validations, serialize/sanitize, whitelisting/blacklisting, RegExp.
