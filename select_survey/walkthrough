@@ -1,3 +1,5 @@
 On the survey page we can select a value between 1 and 10, if we inspect we see that the value are put in the select options.
 
 If we put a high value and send this one, the flag appear.
+
+Protect : Check value on server side..

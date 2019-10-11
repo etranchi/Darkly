@@ -1,0 +1,9 @@
+We can find in the dev console or owasp, that a cookie is set a the beginning.
+
+Put this cookie in google, you will that this hash match a md5 reverse equal to "false".
+
+Put the md5 hash of true instead.
+
+The flag appear.
+
+Encryption, unique cookie, time base cookie.
