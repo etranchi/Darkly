@@ -1,0 +1,14 @@
+When we have inspect the table on SQL,we have find a table type named "brute_force", so we have try to brute force the signin page we "root" and "admin".
+
+We have used Owasp to make the brute_force with a database of password in the Ressources folder (database of 18k passwd).
+
+We need to setup a proxy with FoxyProxy on Chrome (https://andrewedstrom.com/zap-foxyproxy/).
+
+After that we use Fuzzer to put our password data.
+
+Attack.
+
+The response are all with a Status 200 (OK), so we look at the different size of response header, we can find one bigger than the other is with the password "shadow" and login "admin".
+
+
+Prevent : Password Length. Password Complexity. Limit Login Attempts. Modifying .htaccess file. Using Captcha. Two Factor Authentication.
