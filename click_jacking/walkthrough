@@ -1,3 +1,0 @@
-The clickjacking exploit is to include a web page from an other to make something that the user doesn't want.
-
-There is multiple protection against that, the simplest way is to set the X-Frame-Header-Options.
